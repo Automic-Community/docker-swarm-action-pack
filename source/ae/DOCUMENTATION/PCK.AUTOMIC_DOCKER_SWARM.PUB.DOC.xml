@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
+<DOCU name="PCK.AUTOMIC_DOCKER_SWARM.PUB.DOC">
+<HEADER state="1">
+<Title>Pack Documentation</Title>
+<ArchiveKey1/>
+<ArchiveKey2/>
+<OH_SubType/>
+</HEADER>
+<DOCU_Docu state="1" type="text">
+<DOC><![CDATA[About the Package
+================================
+The cluster management and orchestration features embedded in the Docker Engine are built using swarmkit. Swarmkit is a separate project 
+which implements Docker's orchestration layer and is used directly within Docker.
+A swarm consists of multiple Docker hosts which run in swarm mode and act as managers (to manage membership and delegation) and workers (which run swarm services).
+Can be used for:
+. Clustering and scheduling tool for Docker containers.
+. IT administrators and developers can establish and manage a cluster of Docker nodes as a single virtual system.
+. Allows managing of Docker Cluster remotely.
+
+=Supported versions=
+1.12 and above
+
+=Setup=  
+* The Agent should be able to access docker Server.
+* For remote access docker client should be present on agent OS and Path to docker.exe should be set in PATH environment Variable..
+
+=Variables=
+none
+
+=Common Inputs=
+-Host:                                          Specify the address or hostname of the docker server E.g. 192.168.41.155
+-Port:                                          SSpecify the port of the docker server. E.g. 2377
+-CA Certificate:                                The path to trust certs signed only by this CA. E.g. /home/automic/.docker/ca.pem
+-TLS Certificate:                               The path to trust TLS certificate signed only by this CA. E.g. /home/automic/.docker/cert.pem	
+-TLS KEY:                                       The path to trust key signed only by this CA. E.g. /home/automic/.docker/key.pem
+-Skip TLS Verification:                         If Yes, the server's certificate will not be checked for validity. E.g. Yes, No
+
+=Actions=
+Following actions are supported.
+
+* Action name: PCK.AUTOMIC_DOCKER_SWARM.PUB.ACTION.CREATE_SERVICE
+* Action Description: This action is used to create a service.
+
+* Action name: PCK.AUTOMIC_DOCKER_SWARM.PUB.ACTION.DELETE_SERVICE
+* Action Description: This action is used to remove one or more services.
+
+* Action name: PCK.AUTOMIC_DOCKER_SWARM.PUB.ACTION.SCALE_SERVICE
+* Action Description: This action is used to Scale service.
+
+* Action name: PCK.AUTOMIC_DOCKER_SWARM.PUB.ACTION.UPDATE_SERVICE
+* Action Description: This action is used to Update the service.
+
+* Action name: PCK.AUTOMIC_DOCKER_SWARM.PUB.ACTION.LIST_SERVICES
+* Action Description: This action is used to list services running on swarm.
+]]></DOC>
+</DOCU_Docu>
+</DOCU>
+</uc-export>
